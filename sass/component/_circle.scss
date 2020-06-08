@@ -1,0 +1,43 @@
+// CIRCLE
+.circles {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: -2rem;
+  transition: 0.4s ease;
+  display: none;
+  position: relative;
+
+  @include respond(mobile) {
+    display: block;
+    text-align: center;
+  }
+
+  .circle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--bright-red) !important;
+    border-radius: 50%;
+    margin: 0.1rem;
+
+    &:hover {
+      background-color: var(--bright-red);
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
+}
+
+input[type='radio'] {
+  display: none;
+
+  &:checked .circle {
+    background-color: var(--bright-red);
+  }
+}
+
+.full-circle {
+  background-color: var(--bright-red);
+}

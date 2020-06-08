@@ -1,0 +1,63 @@
+// FEATURE
+.features {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-gap: 4rem;
+  align-items: center;
+
+  @include respond(mobile) {
+    grid-gap: 0;
+  }
+}
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: 2.5rem;
+  @include respond(mobile) {
+    grid-template-columns: none;
+    grid-gap: 0;
+  }
+
+  &__number {
+    display: block;
+    @include respond(mobile) {
+      display: flex;
+    }
+
+    & > .number {
+      display: inline-block;
+      background-color: var(--bright-red);
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 5rem;
+    }
+  }
+
+  &__text {
+    display: grid;
+    grid-template-rows: 4rem 1fr;
+    grid-gap: 2rem;
+    padding-right: 2rem;
+    position: relative;
+    align-items: center;
+
+    @include respond(mobile) {
+      grid-template-rows: none;
+      padding-right: 0;
+    }
+
+    h4 {
+      @include respond(mobile) {
+        font-size: 2rem;
+        background-color: var(--very-pale-red);
+        display: inline;
+        position: absolute;
+        top: -4.2rem;
+        left: 6rem;
+        padding: 0.5rem 0 0.5rem 3.5rem;
+        z-index: -1;
+        width: 100%;
+      }
+    }
+  }
+}
