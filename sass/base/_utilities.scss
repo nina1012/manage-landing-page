@@ -1,0 +1,27 @@
+// UTILITY CLASSES
+.padding-centering {
+  padding: 0 17rem;
+  @include respond(mobile) {
+    padding: 0 4rem;
+  }
+}
+
+.margin-bottom-2-5 {
+  margin-bottom: 2.5rem;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.shadow {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.01),
+    rgba(0, 0, 0, 1)
+  );
+}

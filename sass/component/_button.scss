@@ -1,0 +1,35 @@
+// BUTTON
+.btn {
+  border: none;
+  padding: 1.5rem 0;
+  font-weight: 700;
+  border-radius: 5rem;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+  width: 14rem;
+  box-shadow: 0 1px 5px 0.5px rgba(242, 95, 58, 0.9);
+
+  @include respond(mobile) {
+    margin: 0 auto;
+    width: 18rem;
+    padding: 1.5rem;
+  }
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+    filter: brightness(150%);
+    transform: scale(1.09);
+    outline: none;
+  }
+}
+
+.btn-orange {
+  background-color: var(--bright-red);
+  color: white;
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--bright-red);
+}

@@ -1,0 +1,157 @@
+// FOOTER
+.footer {
+  display: grid;
+  grid-template-columns: 15rem 2fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  background-color: var(--very-dark-blue);
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+
+  @include respond(mobile) {
+    grid-template-columns: none;
+    grid-template-rows: auto repeat(2, minmax(auto, 1fr)) min-content;
+    grid-gap: 5rem;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style: none;
+    padding-left: 10rem;
+
+    @include respond(mobile) {
+      padding-left: 5rem;
+      order: 0;
+    }
+  }
+  &__item {
+    padding: 0.25rem 1.5rem;
+    position: relative;
+
+    &:hover {
+      color: var(--bright-red);
+      cursor: pointer;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: 0.2s color ease-in;
+
+    &:hover {
+      color: var(--bright-red);
+      cursor: pointer;
+    }
+  }
+  &__link:hover,
+  &__link:active,
+  &__link:focus {
+    color: var(--bright-red);
+    outline: none;
+  }
+
+  .logo {
+    text-align: center;
+  }
+}
+
+.logo-social-container,
+.form-copyright {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+
+  .social {
+    display: flex;
+    justify-content: space-around;
+    transition: 0.3s ease;
+
+    & > svg {
+      transition: 0.3s ease;
+      @include respond(mobile) {
+        transform: scale(1.5);
+      }
+      &:hover > path {
+        fill: var(--bright-red);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.logo-social-container {
+  @include respond(mobile) {
+    flex-direction: column-reverse;
+    order: 10;
+  }
+}
+
+.form-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  @include respond(mobile) {
+    order: -1;
+  }
+
+  * {
+    margin-left: auto;
+
+    @include respond(mobile) {
+      margin: 0;
+    }
+  }
+
+  .form {
+    input {
+      border: none;
+      border-radius: 5rem;
+      padding: 1.25rem 1.5rem;
+      transition: 0.3s ease;
+
+      @include respond(mobile) {
+        width: 83%;
+      }
+
+      &:focus,
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+    @include respond(mobile) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  .btn {
+    width: max-content;
+    padding: 1rem 2rem;
+  }
+  .copyright {
+    font-size: 1.2rem;
+    display: inline-block;
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+}
+
+.copyright-mobile {
+  display: none;
+  @include respond(mobile) {
+    display: inline-block;
+    order: 10;
+    text-align: center;
+  }
+}

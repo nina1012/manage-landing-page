@@ -1,0 +1,78 @@
+// SLIDER
+.slider {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(55rem, 1fr));
+  grid-gap: 3rem;
+  padding: 13rem 0 5rem;
+  position: relative;
+  left: -10%;
+
+  @include respond(mobile) {
+    // grid-template-columns: repeat(4, minmax(40rem, 100%));
+    grid-template-columns: minmax(40rem, 100%);
+    justify-content: center;
+    height: 47rem;
+    left: 0;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  &__item {
+    text-align: center;
+    position: relative;
+    display: block;
+    transition: 0.3s ease-in;
+
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+  &__item:nth-child(2) {
+    @include respond(mobile) {
+      display: block;
+    }
+  }
+  &__item:nth-child(1),
+  &__item:nth-child(3) &__item:nth-child(4) {
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+
+  &__avatar {
+    position: absolute;
+    top: -35px;
+    width: 100%;
+    display: flex;
+    height: 7rem;
+
+    @include respond(mobile) {
+      height: 8rem;
+    }
+
+    img {
+      width: 70px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    background-color: var(--very-light-gray);
+    padding: 5rem;
+
+    @include respond(mobile) {
+      padding: 5rem 3rem;
+    }
+
+    p {
+      @include respond(mobile) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  & ~ button {
+    margin: 0 auto;
+  }
+}
