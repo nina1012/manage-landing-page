@@ -16,11 +16,15 @@
 
   .circle {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 15px;
     border: 1px solid var(--bright-red) !important;
     border-radius: 50%;
     margin: 0.1rem;
+    @include respond(mobile) {
+      width: 8px;
+      height: 8px;
+    }
 
     &:hover {
       background-color: var(--bright-red);

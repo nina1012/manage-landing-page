@@ -135,11 +135,15 @@ h2 {
       text-align: center; } }
   .circles .circle {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 15px;
+    height: 15px;
     border: 1px solid var(--bright-red) !important;
     border-radius: 50%;
     margin: 0.1rem; }
+    @media only screen and (max-width: 600px) {
+      .circles .circle {
+        width: 8px;
+        height: 8px; } }
     .circles .circle:hover {
       background-color: var(--bright-red);
       opacity: 0.6;
